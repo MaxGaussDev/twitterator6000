@@ -39,3 +39,13 @@ To search user posts go to ```http://host/web/twitter_screen_name``` and insert 
 # Troubleshooting
 
 Make sure that cache and logs directories have permissions for writing files. Both are located in:```var/``` directory.
+
+```sudo chmod -R 777 var/cache``` 
+```sudo chmod -R 777 var/cache``` 
+
+Depending on your LAMP stack there might be some Session problems with Symfony 3.1, so make sure to remove the handler id from themain config file, look for these lines (app/config/config.yml under framework properties):
+```
+session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  ~ 
+``` 
