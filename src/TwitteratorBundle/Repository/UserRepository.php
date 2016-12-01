@@ -77,10 +77,3 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
         return $results;
     }
 }
-
-
-//                    $query = "SELECT user.screenName, post.content, post.postedAt,
-//                    MATCH (post.content) AGAINST (:search IN BOOLEAN MODE) AS score
-//                    FROM post
-//                    LEFT JOIN user ON user.id = post.userIdFk
-//                    WHERE post.userIdFk = :id HAVING score > 0;";
