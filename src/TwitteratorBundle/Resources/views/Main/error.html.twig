@@ -1,0 +1,16 @@
+{% extends 'TwitteratorBundle:Main:base.html.twig' %}
+
+{% block content %}
+
+    {% if errors is defined %}
+
+        <h1>Errors be here!</h1>
+        <p>You encounter the following Errors on your journey:</p>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

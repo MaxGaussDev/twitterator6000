@@ -1,0 +1,41 @@
+{% extends 'TwitteratorBundle:Main:base.html.twig' %}
+
+{% block content %}
+
+    <h1>Search</h1>
+
+    {% if users is defined %}
+        <form class="navbar-form navbar-left" method="POST" action="{{ path('twitterator_search') }}">
+
+            <div class="form-group">
+                <label for="sel1">Select User:</label>
+                <select class="form-control" id="sel1" name="user_id">
+                    <option value="0"> --- Select User ---</option>
+                    {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.fullName }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">@</span>
+                <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon2" name="search_term">
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button><br>
+        </form><br><br>
+    {% endif %}
+
+    {% if results is defined %}
+        <h3>Results</h3>
+        <ul class="list-group">
+            {% for result in results %}
+                <li class="list-group-item"><h6>posted by: {{ result['screenName'] }} | {{ result['postedAt'] }}</h6>
+                    <p>{{ result['content'] }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+{% endblock %}

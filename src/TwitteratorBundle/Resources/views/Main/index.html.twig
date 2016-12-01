@@ -1,0 +1,37 @@
+{% extends 'TwitteratorBundle:Main:base.html.twig' %}
+
+{% block content %}
+
+    {% if users is defined %}
+
+        <h1>Users List</h1>
+        <ul>
+            {% for user in users %}
+                <li><a href="{{ app.request.getSchemeAndHttpHost() }}{{ app.request.getBaseURL() }}/{{ user.screenName }}">{{ user.fullName|e }}</a></li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        {% if user is defined %}
+
+            <h1>{{ user.fullName }}</h1>
+            <h4>@{{ user.screenName }} | Added: {{ user.createdAt }}</h4>
+
+            {% if posts is defined %}
+
+                <ul class="list-group">
+                {% for post in posts %}
+                    <li class="list-group-item"><h6>{{ post.postedAt }}</h6>
+                    <p>{{ post.content }}</p>
+                    </li>
+                {% endfor %}
+                </ul>
+
+            {% endif %}
+
+        {% endif %}
+
+    {% endif %}
+
+{% endblock %}

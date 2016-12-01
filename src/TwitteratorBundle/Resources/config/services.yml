@@ -1,0 +1,4 @@
+services:
+    twitterator.test:
+        class: TwitteratorBundle\Services\TweeterProxy
+        arguments: ["%tweeterator_parameters%"]
