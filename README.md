@@ -34,7 +34,7 @@ Add new user, or view the profile of existing user, go to:
 
 This will add the user and the last 20 updates.
 
-To search user posts go to ```http://host/web/twitter_screen_name``` and insert the search term, or select imported user, or both. 
+To search user posts go to ```http://host/web/search``` and insert the search term, or select imported user, or both. 
 
 # Troubleshooting
 
