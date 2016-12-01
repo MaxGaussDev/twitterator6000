@@ -4,7 +4,7 @@ Twitterator 6000 - experimental Symfony project
 
 # Installation
 
-Should be easy peasy. This is the 6 step program:
+Should be easy peasy. This is the 7 step program:
 - Step 1 - clone the project 
 - Step 2 - create empty MySQL database
 - Step 3 - update composer (insert DB data)
